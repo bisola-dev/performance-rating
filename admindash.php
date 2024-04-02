@@ -4,6 +4,8 @@
  $sesrole = $_SESSION['userRole'];
  $sesuserName = $_SESSION['userName'];
 
+ 
+
 
 ?>
 
@@ -72,6 +74,7 @@
             <li><a href="allrated.php">View All Rated</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
+
     </div>
     <div class="content">
         <h1>Welcome to the Admin Dashboard,  Dear <?php echo $sesuserName;?></h1>

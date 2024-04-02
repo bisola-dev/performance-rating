@@ -1,6 +1,6 @@
 <?php
     include_once "connection.php";
-    include_once "check.php";
+   include_once "check.php";
 
     function mapPercentageToGrade($percentage) {
         if ($percentage >= 90) {

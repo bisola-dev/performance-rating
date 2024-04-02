@@ -1,7 +1,10 @@
 <?php
    include_once "connection.php";
     include_once "constant2.php";
-    include_once "check.php";
+
+    $sesid = $_SESSION['recID'];
+    $sesrole = $_SESSION['userRole'];
+    $sesuserName = $_SESSION['userName'];
 
   
     if (isset($_POST["next"])) {
@@ -38,7 +41,7 @@
             if ($iuppy === true) {
                 // Insertion succeeds
                 echo '<script>alert("record updated successfully.")
-                 window.location.href="viewratedstaff.php";
+                 window.location.href="allrated.php";
                  </script>';
                  } else {
                       // Insertion fai

@@ -19,7 +19,7 @@ if (isset($_POST['reset_password'])) {
 
     if ($update_result) {
         // Password updated successfully
-        echo "<script>alert('Password reset successfully. New password: $new_password, try logging in');window.location.href='sign-in.php';</script>";
+        echo "<script>alert('Password reset successfully. New password: $new_password, try logging in');</script>";
   
     } else {
         // Failed to update password
