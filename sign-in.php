@@ -54,7 +54,7 @@ if (isset($_POST['login'])) {
                 echo "<script type='text/javascript'>alert('error in access.,please retry');</script>";
             }
         } else {
-            echo "<script type='text/javascript'>alert('Incorrect username or password');</script>";
+            echo "<script type='text/javascript'>alert('Sorry, you do not have access to this portal, please confirm access with the admin');</script>";
         }
     }
 }

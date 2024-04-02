@@ -82,11 +82,18 @@ if (isset($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Password</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .back-to-login {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
 </head>
+<a href="index.php" class="back-to-login inline-block px-2 py-1 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Back to login page</a>
+<div class="max-w-md w-full bg-white p-8 rounded-md shadow-md">
 <body class="bg-gray-100 flex justify-center items-center min-h-screen">
-    <div class="max-w-md w-full bg-white p-8 rounded-md shadow-md">
-   
- <?php echo 'WELCOME'.' '.$sesfulln . ' || ' . $sesstatus . ' || ' . $sesrole.' || '.$sesdept; ?> 
+    <?php echo 'WELCOME'.' '.$sesfulln . ' || ' . $sesstatus . ' || ' . $sesrole.' || '.$sesdept; ?> 
     <h1 class="text-2xl font-semibold mb-4 text-center text-yellow-600">Please Change Your Password</h1>
         <form action="" method="post">
             <div class="mb-4">
