@@ -2,10 +2,6 @@
    include_once "connection.php";
     include_once "constant2.php";
 
-    $sesid = $_SESSION['recID'];
-    $sesrole = $_SESSION['userRole'];
-    $sesuserName = $_SESSION['userName'];
-
   
     if (isset($_POST["next"])) {
         $punctuality = mysqli_real_escape_string($conn, $_POST['punctuality']);
@@ -41,7 +37,7 @@
             if ($iuppy === true) {
                 // Insertion succeeds
                 echo '<script>alert("record updated successfully.")
-                 window.location.href="allrated.php";
+                 window.location.href="viewratedstaff.php";
                  </script>';
                  } else {
                       // Insertion fai
