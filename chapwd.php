@@ -5,9 +5,7 @@ include_once "check.php";
 
 
   // Query to retrieve user info
-  $query = "SELECT * FROM managementofficers
-  WHERE staff_number = '$sesstaffid'";
-
+  $query = "SELECT * FROM managementofficers WHERE staff_number = '$sesstaffid'";
  $result = mysqli_query($conn, $query);
 // Check if exactly one row is returned
 if (mysqli_num_rows($result) == 1) {
@@ -47,9 +45,10 @@ if (isset($_POST['login'])) {
                 // Hash the new password
            
                 $hashed_password = md5('ririra' . $npwd); 
-
+                echo   $hashed_password ;
+             
                 // Update the password in the database
-                $update_query = "UPDATE managementofficers SET Hpazz = '$hashed_password' WHERE staff_number = '$sestaffid'";
+                $update_query = "UPDATE managementofficers SET Hpazz = '$hashed_password' WHERE staff_number = '$sesstaffid'";
                 $update_result = mysqli_query($conn, $update_query);
 
                 if ($update_result) {

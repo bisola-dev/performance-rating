@@ -1,60 +1,62 @@
 <?php
 include_once "connection.php";
-
 if (isset($_POST['login'])) {
     // Sanitize input
     $staffid = mysqli_real_escape_string($conn, trim(strip_tags($_POST['staffid'])));
     $Hpazz = mysqli_real_escape_string($conn, trim(strip_tags($_POST['Hpazz'])));
     
-    // Debug: Check if inputs are received
-    //echo $staffid . ' ' . $Hpazz;
-    $hashed_password = md5('ririra' . $Hpazz); 
-    //echo $hashed_password;
-
     // Check if fields are empty
     if ($staffid == "" || $Hpazz == "") {
         echo "<script type='text/javascript'>alert('Please fill in all the fields');</script>";
     } else {
-        // Query to retrieve user info
-        $query = "SELECT * FROM vw_managementofficers
-                  WHERE staff_number = '$staffid'
-                  AND Hpazz = '$hashed_password'";
-        $result = mysqli_query($conn, $query);
+        // Query to check if staff ID exists
+        $staff_query = "SELECT * FROM vw_managementofficers WHERE staff_number = '$staffid'";
+        $staff_result = mysqli_query($conn, $staff_query);
 
-        // Check if exactly one row is returned
-        if (mysqli_num_rows($result) == 1) {
-            // Fetch user data
-            $row = mysqli_fetch_assoc($result);
-            // $id = $row['id'];  
-            $rolez = $row['Role'];
-            $dept = $row['OfficeHeld'];
-            $fulln = $row['fulln'];
-            $status = $row['Status_Capacity'];
-            $staff_number = $row['staff_number'];
-
-             // Set session variables
-             $sesrole= $_SESSION['Role'] = $rolez;
-             $sesdept=$_SESSION['OfficeHeld'] = $dept;
-             $sesfulln=$_SESSION['fulln'] = $fulln;
-             $sesstatus=$_SESSION['Status_Capacity'] = $status;
-             $sesstaffid=$_SESSION['staff_number'] = $staff_number;
-       
-
-            //  update managementofficers table
-            $insert_query  = "UPDATE managementofficers SET lastlogin='$grisland', isActive= 1  WHERE staff_number='$sesstaffid'";
-            $insert_result = mysqli_query($conn, $insert_query);
-            // Check if update is successful
-            if ($insert_result) {
-                // Redirect to change password page
-                echo '<script type="text/javascript">
-                    alert("You have successfully logged in.");
-                    window.location.href = "chapwd.php"; 
-                </script>';
-            } else {
-                echo "<script type='text/javascript'>alert('error in access.,please retry');</script>";
-            }
+        // Check if staff ID exists
+        if (mysqli_num_rows($staff_result) == 0) {
+            echo "<script type='text/javascript'>alert('sorry you do not have access to this portal,please contact the Admin');</script>";
         } else {
-            echo "<script type='text/javascript'>alert('Sorry, you do not have access to this portal, please confirm access with the admin');</script>";
+            // Query to check if password is correct
+            $hashed_password = md5('ririra' . $Hpazz); 
+            $password_query = "SELECT * FROM vw_managementofficers WHERE staff_number = '$staffid' AND Hpazz = '$hashed_password'";
+            $password_result = mysqli_query($conn, $password_query);
+
+            // Check if password is correct
+            if (mysqli_num_rows($password_result) == 0) {
+                echo "<script type='text/javascript'>alert('Incorrect password, please contact the admin for a reset if forgotten');</script>";
+            } else {
+                // Fetch user data
+                $row = mysqli_fetch_assoc($password_result);
+                $rolez = $row['Role'];
+                $dept = $row['OfficeHeld'];
+                $fulln = $row['fulln'];
+                $status = $row['Status_Capacity'];
+                $staff_number = $row['staff_number'];
+
+                // Set session variables
+                $_SESSION['Role'] = $rolez;
+                $_SESSION['OfficeHeld'] = $dept;
+                $_SESSION['fulln'] = $fulln;
+                $_SESSION['Status_Capacity'] = $status;
+                $_SESSION['staff_number'] = $staff_number;
+
+                // Update managementofficers table
+                $grisland = date("Y-m-d H:i:s");
+                $insert_query  = "UPDATE managementofficers SET lastlogin='$grisland', isActive=1 WHERE staff_number='$staff_number'";
+                $insert_result = mysqli_query($conn, $insert_query);
+
+                // Check if update is successful
+                if ($insert_result) {
+                    // Redirect to change password page
+                    echo '<script type="text/javascript">
+                        alert("You have successfully logged in.");
+                        window.location.href = "chapwd.php"; 
+                    </script>';
+                } else {
+                    echo "<script type='text/javascript'>alert('Error in access, please retry');</script>";
+                }
+            }
         }
     }
 }
