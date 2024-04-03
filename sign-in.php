@@ -24,7 +24,7 @@ if (isset($_POST['login'])) {
 
             // Check if password is correct
             if (mysqli_num_rows($password_result) == 0) {
-                echo "<script type='text/javascript'>alert('Incorrect password, please contact the admin for a reset if forgotten');</script>";
+                echo "<script type='text/javascript'>alert('Incorrect password, please try again or contact the admin for a reset ');</script>";
             } else {
                 // Fetch user data
                 $row = mysqli_fetch_assoc($password_result);

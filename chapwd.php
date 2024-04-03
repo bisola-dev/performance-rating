@@ -97,16 +97,18 @@ if (isset($_POST['login'])) {
         <form action="" method="post">
             <div class="mb-4">
                 <label for="old_password" class="block text-sm font-medium text-gray-700">Old Password:</label>
-                <input type="password" id="old_password" name="olpazz" placeholder="Old Password" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                <input type="password" id="old_password" name="olpazz" placeholder="Old Password"  maxlength="7" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
             </div>  
             <div class="mb-4">
-                <label for="new_password" class="block text-sm font-medium text-gray-700">New Password:</label>
-                <input type="password" id="new_password" name="npwd" placeholder="New Password" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
-            </div>
-            <div class="mb-6">
-                <label for="confirm_password" class="block text-sm font-medium text-gray-700">Confirm New Password:</label>
-                <input type="password" id="confirm_password" name="cpwd" placeholder="Confirm New Password" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
-            </div>
+           <label for="new_password" class="block text-sm font-medium text-gray-700">New Password:</label>
+          <input type="password" id="new_password" name="npwd" placeholder="New Password" maxlength="7" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+         </div>
+
+      <div class="mb-6">
+    <label for="confirm_password" class="block text-sm font-medium text-gray-700">Confirm New Password:</label>
+    <input type="password" id="confirm_password" name="cpwd" placeholder="Confirm New Password" maxlength="7" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+     </div>
+
             <div class="text-center">
             <button type="submit" name="login" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">Change Password</button>
             </div>
