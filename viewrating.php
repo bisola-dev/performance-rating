@@ -1,6 +1,6 @@
 <?php
     include_once "connection.php";
-    include_once "constants.php";
+    include_once "eddy.php";
     include_once "check.php";
 
 

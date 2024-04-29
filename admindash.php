@@ -4,7 +4,7 @@
  $sesrole = $_SESSION['userRole'];
  $sesuserName = $_SESSION['userName'];
 
- 
+ if ($sesid== ""|| $sesrole ==""|| $sesuserName==""){header("Location:logout.php");}
 
 
 ?>

@@ -1,15 +1,72 @@
 <?php
-   include_once "connection.php";
-    include_once "constant2.php";
+    include_once "connection.php";
+    include_once "check.php";
 
-    $sesid = $_SESSION['recID'];
-    $sesrole = $_SESSION['userRole'];
-    $sesuserName = $_SESSION['userName'];
-   
-    if ($sesid== ""|| $sesrole ==""|| $sesuserName==""){header("Location:logout.php");}
-   
+    if (isset($_GET['staffid'])) {
+        $staffid = mysqli_real_escape_string($conn, trim(strip_tags($_GET['staffid'])));
+        if ($staffid == "") {
+        header("Location:logout.php");       
+        } else {
+            // Check performance and redirect if necessary
+            checkPerformanceAndRedirect($conn, $staffid);
+            
+            // Get user info
+            $userData = getUserInfo($conn, $staffid);
+            
+            if ($userData) {
+                // Set session variables
+                setSessionVariables($userData, $staffid);
+            } else {
+                echo '<script type="text/javascript">alert("This staff ID does not exist");</script>';
+            }
+        }
+    }
+    function checkPerformanceAndRedirect($conn, $staffid) {
+        $updated = mysqli_query($conn, "SELECT * FROM performance WHERE staff_id = '$staffid' AND dele = 1");
+        if (mysqli_num_rows($updated) == 1) {
+            echo '<script>alert("You have once created and rated this staff, please proceed to update staff ratings."); window.location.href="editrate.php";</script>';
+    
+        }
+    }
 
-  
+    function getUserInfo($conn, $staffid) {
+        // SQL query to select all columns with an alias for the fulln column
+        $query = "SELECT *, fulln AS username FROM identy WHERE staffno = '$staffid '";
+    
+        $result = mysqli_query($conn, $query);
+        return mysqli_fetch_assoc($result);
+    }
+    
+    function setSessionVariables($userData, $staffid) {
+        $_SESSION['gradelevel'] = $userData['gradelevel'];
+        $_SESSION['cadre'] = $userData['cadre'];
+        $_SESSION['username'] = $userData['username'];
+        $_SESSION['ranc'] = $userData['ranc'];
+        $_SESSION['orig'] = $userData['orig'];
+        $_SESSION['categ'] = $userData['categ'];
+        $_SESSION['dept'] = $userData['dept'];
+        $_SESSION['sexx'] = $userData['sexx'];
+        $_SESSION['staffid'] = $staffid;
+        $_SESSION['unit'] = $userData['unit'];
+        $_SESSION['pozt'] = $userData['pozt'];
+    }
+
+    
+	$sestafgrade = $_SESSION['gradelevel'];
+	$sestafcadre= $_SESSION['cadre'];
+	$sestaffulln = $_SESSION['username'];
+	$sestafranc = $_SESSION['ranc'];
+
+	$sestaforig = $_SESSION['orig'];
+	$sestafcateg= $_SESSION['categ'];
+	$sestafdept= $_SESSION['dept'];
+	$sestafsex= $_SESSION['sexx'];
+
+	$sestafunit= $_SESSION['unit'];
+	$sestafpozt= $_SESSION['pozt'];
+	$staffid= $_SESSION['staffid'];
+
+
     if (isset($_POST["next"])) {
         $punctuality = mysqli_real_escape_string($conn, $_POST['punctuality']);
         $absent = mysqli_real_escape_string($conn, $_POST['absent']);
@@ -39,15 +96,17 @@
     
         //Be sure that all the fields are filled then proceed
         echo '<script>alert("You have to fill in ALL the fields correctly to proceed")</script>';
+            
+      //checking for at least 8 characters in the password
+          } else {   
 
-          } else {$iuppy =  mysqli_query($conn,"UPDATE  performance  SET  punctuality = $punctuality, absenteeism = $absent, attitude = $attitude, quality = $quality,record = $record,competence = $competence,diligence = $diligence,loyalty = $loyalty,promptness = $promptness,tmanagement = $tmanagement,willingness = $willing,innovative = $innovate,courteous = $courteous,honesty = $honesty,leadership = $leader,confident = $confident,ability = $ability,adaptation = $adapt,respect = $respect,care = $care,constrainnt = $constraint, update_reg='$grisland' WHERE staff_id='$staffid'"); 
-            if ($iuppy === true) {
-                // Insertion succeeds
-                echo '<script>alert("record updated successfully.")
-                 window.location.href="allrated.php";
+        $insert=  mysqli_query($conn,"INSERT INTO  performance (staff_id,dele, punctuality , absenteeism, attitude,quality,record,competence,diligence,loyalty,promptness,tmanagement,willingness,innovative,courteous,honesty,leadership,confident,ability,adaptation,respect,care,constrainnt, date_reg,ratedby) VALUES ('$staffid',1,$punctuality,$absent,$attitude,$quality,$record,$competence,$diligence,$loyalty,$promptness,$tmanagement,$willing,$innovate,$courteous,$honesty,$leader,$confident,$ability,$adapt,$respect,$care,$constraint,'$grisland','$sesstaffid')");
+            if ( $insert === true) {
+                // Insertion failed
+                echo '<script>alert("record inserted successfully.")
+                 window.location.href="viewrating.php";
                  </script>';
                  } else {
-                      // Insertion fai
                     echo '<script type="text/javascript">
                     alert("Incomplete submission ,Please try again");
                          </script>';
@@ -71,15 +130,14 @@
 </head>
 <body class="bg-gradient-to-b from-green-100 to-green-300 min-h-screen flex justify-center items-center p-4">
 <div class="container mx-auto">
-<div class="mt-4">
-    <a href="admindash.php" class="inline-block px-2 py-1 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Back to Dashboard</a>
+    <div class="mt-4">
+    <a href="dashboard.php" class="inline-block px-2 py-1 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Back to Dashboard</a>
 </div>
-
         <div class="">
             <h3 class="text-2xl font-semibold mb-8 text-center">PERFORMANCE RATING INDICATORS</h3>
         </div>
         
-        <h4 class="text-2xl font-semibold mb-6 text-center text-red-700 underline">Please edit as desired the rating parameters below to rate <?php echo $sestaffulln.' || '.$staffid.'||'. $sestafranc;?></h4>
+        <h4 class="text-2xl font-semibold mb-6 text-center text-red-700 underline">Please use the rating parameters below to rate <?php echo $sestaffulln.' || '.$staffid.'||'. $sestafranc;?></h4>
          <div>
         <form method="POST" class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4">
             
@@ -844,7 +902,6 @@
 </div>
       
         </form> 
-        <footer class="text-center mt-8 text-xs text-gray-600">&copy; <?php echo date("Y"); ?> CITM. All rights reserved.</footer>
         </div>  
     </div> 
 </body>

@@ -4,8 +4,9 @@ include_once "check.php";
  
 
 
+
   // Query to retrieve user info
-  $query = "SELECT * FROM managementofficers WHERE staff_number = '$sesstaffid'";
+$query = "SELECT * FROM managementofficers WHERE staff_number = '$sesstaffid'";
  $result = mysqli_query($conn, $query);
 // Check if exactly one row is returned
 if (mysqli_num_rows($result) == 1) {
@@ -32,11 +33,12 @@ if (isset($_POST['login'])) {
     // Query to get the current password of the user
     $query = "SELECT Hpazz FROM managementofficers WHERE staff_number = '$sesstaffid'";
     $result = mysqli_query($conn, $query);
+ 
 
     if ($result && mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
         $current_password = $row['Hpazz'];
-
+     
     
         // Verify if the old password matches the current password
         if ($hashedolpazz === $current_password) {          
@@ -45,7 +47,8 @@ if (isset($_POST['login'])) {
                 // Hash the new password
            
                 $hashed_password = md5('ririra' . $npwd); 
-                echo   $hashed_password ;
+                //echo  $hashed_password ;
+             
              
                 // Update the password in the database
                 $update_query = "UPDATE managementofficers SET Hpazz = '$hashed_password' WHERE staff_number = '$sesstaffid'";
@@ -113,6 +116,7 @@ if (isset($_POST['login'])) {
             <button type="submit" name="login" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">Change Password</button>
             </div>
         </form>
+        <footer class="text-center mt-8 text-xs text-gray-600">&copy; <?php echo date("Y"); ?> CITM. All rights reserved.</footer>
     </div>
 </body>
 </html>

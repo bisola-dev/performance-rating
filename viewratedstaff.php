@@ -726,5 +726,8 @@ if (!$queryDb) {
             $('#performanceTable').DataTable();
         });
     </script>
+<div>
+<footer class="text-center mt-8 text-xs text-gray-600">&copy; <?php echo date("Y"); ?> CITM. All rights reserved.</footer></div>
     </body>
+
 </html>

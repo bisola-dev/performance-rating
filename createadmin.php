@@ -229,7 +229,9 @@ if (mysqli_num_rows($bisola) > 0) {
 ?>
 
             </tbody>
-        </table>
-    </div>
+        </table> 
+        <div>
+        <footer class="text-center mt-8 text-xs text-gray-600">&copy; <?php echo date("Y"); ?> CITM. All rights reserved.</footer>
+    </div> 
 </body>
 </html>

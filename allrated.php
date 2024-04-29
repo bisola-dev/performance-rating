@@ -3,6 +3,9 @@
     $sesid = $_SESSION['recID'];
     $sesrole = $_SESSION['userRole'];
     $sesuserName = $_SESSION['userName'];
+   
+    if ($sesid== ""|| $sesrole ==""|| $sesuserName==""){header("Location:logout.php");}
+   
 
     function mapPercentageToGrade($percentage) {
         if ($percentage >= 90) {
@@ -18,18 +21,9 @@
         }
     }
   
-    $queryDb = mysqli_query($conn, "
-    SELECT identy.*, performance.*, identy.fulln AS username 
-    FROM identy 
-    INNER JOIN performance ON identy.staffno = performance.staff_id 
-    WHERE performance.ratedby IS NOT NULL
-    ORDER BY username ASC
-");
 
 
-if (!$queryDb) {
-    die('Error: ' . mysqli_error($conn));
-}
+
 
 ?>
 <!DOCTYPE html>
@@ -55,36 +49,100 @@ if (!$queryDb) {
             
             <thead>
                 <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">S/N</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Names of staff</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Gender</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Staff ID No</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Department/unit</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Designation</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Punctuality</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Absenteeism</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Attitude to Work</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Quality of Work Output</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Record Keeping</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Competence</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Diligence</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Loyalty to Organization</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Prompt Response to Task</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Time Management</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Willingness to do Extra Task</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Innovative</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Courteous</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Honesty</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Leadership Trait</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Constraint</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Confidentiality</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Ability to Work Under Pressure
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Adaptation to College Mission/Vision</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Respect for Constituted Authority</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Care for College Properties/Assets</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Edit</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Key result area(KRA)Critical success Area</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Key Performance Indicator(KPI)</th>
+ <th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    S/N
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Names of staff
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Gender
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Staff ID No
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Department/unit
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Designation
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Punctuality
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Absenteeism
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Attitude to Work
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Quality of Work Output
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Record Keeping
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Competence
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Diligence
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Loyalty to Organization
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Prompt Response to Task
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Time Management
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Willingness to do Extra Task
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Innovative
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Courteous
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Honesty
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Leadership Trait
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Constraint
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Confidentiality
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Ability to Work Under Pressure
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Adaptation to College Mission/Vision
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Respect for Constituted Authority
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Care for College Properties/Assets
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Edit
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Key result area(KRA)Critical success Area
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Key Performance Indicator(KPI)
+</th>
+<th class="px-6 py-3 text-center align-middle text-xs font-medium text-gray-700 uppercase tracking-wider">
+    Rated by
+</th>
+
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
@@ -92,13 +150,23 @@ if (!$queryDb) {
 
                $count = 1;
                $queryDb = mysqli_query($conn, "
-    SELECT identy.*, performance.*, identy.fulln AS username 
-    FROM identy 
-    INNER JOIN performance ON identy.staffno = performance.staff_id 
-    WHERE performance.ratedby IS NOT NULL
-    ORDER BY username ASC
-");
-
+               SELECT 
+                   identy.*, 
+                   performance.*, 
+                   identy.fulln AS username,
+                   ratedby_identy.fulln AS rated_by_name
+               FROM 
+                   identy 
+               INNER JOIN 
+                   performance ON identy.staffno = performance.staff_id 
+               INNER JOIN 
+                   identy AS ratedby_identy ON performance.ratedby = ratedby_identy.staffno
+               WHERE 
+                   performance.ratedby IS NOT NULL
+               ORDER BY 
+                   username ASC
+           ");
+           
   
 
                 while ($row=mysqli_fetch_assoc($queryDb )) {
@@ -141,8 +209,12 @@ if (!$queryDb) {
                     $sestafunit= $row['unit'];
                     $sestafpozt= $row['pozt'];
                     $staffid= $row['staff_id'];
+                    $rate=$row['ratedby'];
+                    $rate2=$row['rated_by_name'];
+                    
 
 
+                    
                     $numCriteria = 21; // Update this with the actual number of criteria
 
                  // Calculate the weight dynamically
@@ -710,8 +782,9 @@ if (!$queryDb) {
                         <td class="px-6 py-4 whitespace-nowrap text-sm">
                         <?php echo $roundedPercentage; ?>%
                         </td>
-
+                    
                         <td class="px-6 py-4 whitespace-nowrap text-sm"><?php echo $grade;?></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm"><?php echo $rate.' || '.$rate2;?></td>
                     </tr>
                     <?php $count++;} ?> 
                 </tbody>
@@ -721,7 +794,11 @@ if (!$queryDb) {
         <div class="mt-12">
              <a href="logout.php" class="px-4 py-2 bg-red-400 text-white rounded-md hover:bg-red-400 focus:outline-none focus:bg-red-400">LOGOUT</a>
         </div>
+        <div>
+        <footer class="text-center mt-8 text-xs text-gray-600">&copy; <?php echo date("Y"); ?> CITM. All rights reserved.</footer>
     </div>
+    </div>
+
  <!-- Include jQuery -->
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Include DataTables JavaScript -->

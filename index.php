@@ -28,6 +28,8 @@
             <a href="sign-in.php" class="inline-block bg-indigo-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">SIGN-IN</a>
             <a href="admin.php" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">ADMIN</a>
         </div>
+        <footer class="text-center mt-8 text-xs text-gray-600">&copy; <?php echo date("Y"); ?> CITM. All rights reserved.</footer>
     </div>
+    
 </body>
 </html>

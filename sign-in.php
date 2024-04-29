@@ -24,7 +24,7 @@ if (isset($_POST['login'])) {
 
             // Check if password is correct
             if (mysqli_num_rows($password_result) == 0) {
-                echo "<script type='text/javascript'>alert('Incorrect password, please try again or contact the admin for a reset ');</script>";
+                echo "<script type='text/javascript'>alert('Incorrect password, please try again or send  ');</script>";
             } else {
                 // Fetch user data
                 $row = mysqli_fetch_assoc($password_result);
@@ -87,6 +87,11 @@ if (isset($_POST['login'])) {
                 <button type="submit" name="login" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">Login</button>
             </div>
         </form>
+        <div class="mt-8">
+            <p class="text-center text-sm text-gray-600">For complaints, please send a mail to <a href="mailto:webometrics@yabatech.edu.ng" class="underline">webometrics@yabatech.edu.ng</a> or see the CITM.</p>
+            <footer class="text-center mt-8 text-xs text-gray-600">&copy; <?php echo date("Y"); ?> CITM. All rights reserved.</footer>
+        </div>
     </div>
+    
 </body>
 </html>

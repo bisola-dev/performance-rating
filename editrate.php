@@ -1,56 +1,7 @@
 <?php
    include_once "connection.php";
-    include_once "constants.php";
+   include_once "eddy.php";
     include_once "check.php";
-
-  
-    if (isset($_POST["next"])) {
-        $punctuality = mysqli_real_escape_string($conn, $_POST['punctuality']);
-        $absent = mysqli_real_escape_string($conn, $_POST['absent']);
-        $attitude = mysqli_real_escape_string($conn, $_POST['attitude']);
-        $quality = mysqli_real_escape_string($conn, $_POST['quality']);
-        $record = mysqli_real_escape_string($conn, $_POST['record']);
-        $competence = mysqli_real_escape_string($conn, $_POST['competence']);
-        $diligence = mysqli_real_escape_string($conn, $_POST['diligence']);
-        $loyalty = mysqli_real_escape_string($conn, $_POST['loyalty']);
-        $promptness = mysqli_real_escape_string($conn, $_POST['promptness']);
-        $tmanagement = mysqli_real_escape_string($conn, $_POST['tmanagement']);
-        $willing = mysqli_real_escape_string($conn, $_POST['willing']);
-        $innovate = mysqli_real_escape_string($conn, $_POST['innovate']);
-        $courteous = mysqli_real_escape_string($conn, $_POST['courteous']);
-        $honesty = mysqli_real_escape_string($conn, $_POST['honesty']);
-        $leader = mysqli_real_escape_string($conn, $_POST['leader']);
-        $confident = mysqli_real_escape_string($conn, $_POST['confident']);
-        $ability = mysqli_real_escape_string($conn, $_POST['ability']);
-        $adapt = mysqli_real_escape_string($conn, $_POST['adapt']);
-        $respect = mysqli_real_escape_string($conn, $_POST['respect']);
-        $care = mysqli_real_escape_string($conn, $_POST['care']);
-        $constraint = mysqli_real_escape_string($conn, $_POST['constraint']);
-    
-    
-        // check for empty field  
-      if($punctuality == "" || $absent == "" || $attitude == "" || $quality == "" || $record == "" || $competence == "" || $diligence == "" || $loyalty== "" || $promptness== "" || $tmanagement== "" || $willing == "" || $innovate == "" || $courteous == "" || $honesty == "" || $leader == "" || $confident == "" || $ability == "" || $adapt== "" || $respect== "" || $care== "" || $constraint == "") {
-    
-        //Be sure that all the fields are filled then proceed
-        echo '<script>alert("You have to fill in ALL the fields correctly to proceed")</script>';
-
-          } else {$iuppy =  mysqli_query($conn,"UPDATE  performance  SET  punctuality = $punctuality, absenteeism = $absent, attitude = $attitude, quality = $quality,record = $record,competence = $competence,diligence = $diligence,loyalty = $loyalty,promptness = $promptness,tmanagement = $tmanagement,willingness = $willing,innovative = $innovate,courteous = $courteous,honesty = $honesty,leadership = $leader,confident = $confident,ability = $ability,adaptation = $adapt,respect = $respect,care = $care,constrainnt = $constraint, update_reg='$grisland' WHERE staff_id='$staffid'"); 
-            if ($iuppy === true) {
-                // Insertion succeeds
-                echo '<script>alert("record updated successfully.")
-                 window.location.href="viewrating.php";
-                 </script>';
-                 } else {
-                      // Insertion fai
-                    echo '<script type="text/javascript">
-                    alert("Incomplete submission ,Please try again");
-                         </script>';
-                
-                
-            }
-        }
-    }
-
 
 
 ?>
@@ -838,7 +789,9 @@
 </div>
       
         </form> 
+        <footer class="text-center mt-8 text-xs text-gray-600">&copy; <?php echo date("Y"); ?> CITM. All rights reserved.</footer>
         </div>  
     </div> 
+   
 </body>
 </html>

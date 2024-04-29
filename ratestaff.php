@@ -1,55 +1,56 @@
 <?php
-include_once "connection.php";
-include_once "check.php";
+include_once "connection.php"; // Include the database connection file
+include_once "check.php"; // Include the session handling file
+
+$v = "";
+// Check if $sesrole is equal to "DEAN"
+if ($sesrole === "DEAN") {
+    // Concatenate "OFFICE OF THE DEAN" with $sesdept
+    $v = "OFFICE OF THE DEAN ";
+    $sesdept2 = $sesdept . ", " . $v;
 
 
+ } elseif ($sesrole === "PRINCIPAL OFFICER") {
+    // Concatenate "OFFICE OF THE " with $sesdept
+    $K = "OFFICE OF THE ";
+    $sesdept2 = $K .$sesdept; 
+}
+elseif ($sesdept === "CENTRE FOR INFORMATION TECHNOLOGY AND MANAGEMENT") {
+    // If $sesdept is "CENTRE FOR INFORMATION TECHNOLOGY AND MANAGEMENT", use LIKE operator for wildcard search
+    $sesdept2 = "%" . $sesdept . "%";
+    
+} elseif ($sesdept === "EPE CAMPUS") {
+    // List of additional departments to fetch
+    $additional_departments = array(
+        $sesdept, // Include "EPE CAMPUS" itself
+        "EPE CAMPUS, OFFICE OF THE DIRECTOR",
+        "EPE CAMPUS, WORKS AND SERVICES",
+        "EPE CAMPUS, SCHOOL ACCOUNT OFFICE"
+    );
 
+    // Set $sesdept2 to the list of additional departments
+    $sesdept2 = $additional_departments;
+} else {
+    // If $sesrole is not "DEAN" and $sesdept does not match any specific condition, just use $sesdept
+    $sesdept2 = $sesdept;
+    // Set $v to an empty string
+    $v = "";
+}
 
-if (isset($_POST['login'])) {
-    $staffid = mysqli_real_escape_string($conn, trim(strip_tags($_POST['staffid'])));
-    if ($staffid == "") {
-        echo "<script type='text/javascript'>alert('Please fill in all the fields');</script>";
-    } else {
-        checkPerformanceAndRedirect($conn, $staffid);
-        $userData = getUserInfo($conn, $staffid);
-        if ($userData) {
-            setSessionVariables($userData, $staffid);
-           echo '<script type="text/javascript">alert("You have successfully created staff. Please proceed to rate this staff."); window.location.href = "performance_one.php";</script>';
-        } else {
-            echo '<script type="text/javascript">alert("This staff id doesnt exist");</script>';
-        }
+// Trim any leading or trailing whitespace from $sesdept2
+if (is_array($sesdept2)) {
+    // If $sesdept2 is an array, iterate over each element and trim it
+    foreach ($sesdept2 as $key => $value) {
+        $sesdept2[$key] = trim($value);
     }
+} else {
+    // If $sesdept2 is not an array, simply trim it
+    $sesdept2 = trim($sesdept2);
 }
 
-function checkPerformanceAndRedirect($conn, $staffid) {
-    $updated = mysqli_query($conn, "SELECT * FROM performance WHERE staff_id = '$staffid' AND dele = 1");
-    if (mysqli_num_rows($updated) == 1) {
-        echo '<script>alert("You have once created and rated this staff, please proceed to update staff ratings."); window.location.href="editrate.php";</script>';
 
-    }
-}
-
-function getUserInfo($conn, $staffid) {
-    // SQL query to select all columns with an alias for the fulln column
-    $query = "SELECT *, fulln AS username FROM identy WHERE staffno = '$staffid'";
-    $result = mysqli_query($conn, $query);
-    return mysqli_fetch_assoc($result);
-}
-
-function setSessionVariables($userData, $staffid) {
-    $_SESSION['gradelevel'] = $userData['gradelevel'];
-    $_SESSION['cadre'] = $userData['cadre'];
-    $_SESSION['username'] = $userData['username'];
-    $_SESSION['ranc'] = $userData['ranc'];
-    $_SESSION['orig'] = $userData['orig'];
-    $_SESSION['categ'] = $userData['categ'];
-    $_SESSION['dept'] = $userData['dept'];
-    $_SESSION['sexx'] = $userData['sexx'];
-    $_SESSION['staffid'] = $staffid;
-    $_SESSION['unit'] = $userData['unit'];
-    $_SESSION['pozt'] = $userData['pozt'];
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,26 +76,101 @@ function setSessionVariables($userData, $staffid) {
         .dashboard-link:hover {
             background-color: #a0aec0;
         }
+
+        /* Additional styles */
+        .container {
+            max-width: 800px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-b from-green-100 to-green-300 min-h-screen flex justify-center items-center bg-gray-100 p-4">
 
-    <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
-    <div class="mt-4">
-    <a href="dashboard.php" class="inline-block px-2 py-1 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Back to Dashboard</a>
-</div>
+    <div class="container mx-auto bg-white p-8 rounded-md shadow-md">
+        <div class="mt-4">
+            <a href="dashboard.php" class="inline-block px-2 py-1 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Back </a>
+        </div>
         <h1 class="text-2xl font-semibold mb-4 text-center text-yellow-600">PERFORMANCE RATING INDICATORS</h1>
-        <h2 class="text-lg font-semibold mb-6 text-center">Rate Staff</h2>
-        <form method="POST" action="">
-            <div class="mb-4">
-                <label for="staffid" class="block text-sm font-medium text-gray-700">Please enter the staffid here</label>
-                <input type="text" id="staffid" name="staffid" placeholder="staff id" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-            </div>
-           
-            <div class="text-center">
-                <button type="submit" name="login" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">Submit</button>
-            </div>
-        </form>
-    </div>
+        <h2 class="text-lg font-semibold mb-6 text-center">MEMBER OF STAFF IN <?php 
+    if ($sesdept === "EPE CAMPUS") {
+        echo $additional_departments[0];
+    } else {
+        echo $sesdept2;
+    }
+?></h2>
+
+
+        <!-- Display the staff numbers and full names in a table -->
+        <?php
+ // Prepare the SQL query with placeholders for the department and staff ID
+if (is_array($sesdept2)) {
+    // If $sesdept2 is an array, create a comma-separated string to use in the query
+    $deptString = implode(",", array_fill(0, count($sesdept2), "?"));
+    $query = mysqli_prepare($conn, "SELECT staffno, fulln FROM identy WHERE dept IN ($deptString) AND categ != 'ACADEMIC' AND staffno != ?");
+    if (!$query) {
+        die("Preparation error: " . mysqli_error($conn)); // Check for preparation error
+    }
+    // Bind the values to the placeholders and execute the query
+    $params = array_merge($sesdept2, array($sesstaffid));
+    mysqli_stmt_bind_param($query, str_repeat("s", count($sesdept2)) . "s", ...$params);
+} else {
+    // If $sesdept2 is a string, bind it directly to the query
+    $query = mysqli_prepare($conn, "SELECT staffno, fulln FROM identy WHERE dept = ? AND categ != 'ACADEMIC' AND staffno != ?");
+    if (!$query) {
+        die("Preparation error: " . mysqli_error($conn)); // Check for preparation error
+    }
+    mysqli_stmt_bind_param($query, "ss", $sesdept2, $sesstaffid);
+}
+
+// Execute the query
+$result = mysqli_stmt_execute($query);
+if (!$result) {
+    die("Execution error: " . mysqli_error($conn)); // Check for execution error
+}
+
+// Get the result
+$result = mysqli_stmt_get_result($query);
+
+
+// Check if there are staff members found in the department
+if (mysqli_num_rows($result) > 0) {
+    echo "<table class='mt-4'>";
+    echo "<thead><tr><th>Staff Number</th><th>Full Name</th><th>Action</th></tr></thead>";
+    echo "<tbody>";
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . $row['staffno'] . "</td>";
+        echo "<td>" . $row['fulln'] . "</td>";
+        echo "<td><a href='performance_one.php?staffid=" . $row['staffno'] . "'>Rate Staff</a></td>";
+        echo "</tr>";
+    }
+    echo "</tbody></table>";
+} else {
+    // Handle the case when no staff members are found in the department
+    echo "<p class='text-center mt-4'>No staff members found in the department.</p>";
+}
+
+// Close the prepared statement
+mysqli_stmt_close($query);
+
+    ?>
+     <footer class="text-center mt-8 text-xs text-gray-600">&copy; <?php echo date("Y"); ?> CITM. All rights reserved.</footer>
+</div>
+
 </body>
+
 </html>

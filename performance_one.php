@@ -3,6 +3,7 @@
     include_once "constants.php";
     include_once "check.php";
     
+
     if (isset($_POST["next"])) {
         $punctuality = mysqli_real_escape_string($conn, $_POST['punctuality']);
         $absent = mysqli_real_escape_string($conn, $_POST['absent']);
@@ -39,9 +40,10 @@
         $insert=  mysqli_query($conn,"INSERT INTO  performance (staff_id,dele, punctuality , absenteeism, attitude,quality,record,competence,diligence,loyalty,promptness,tmanagement,willingness,innovative,courteous,honesty,leadership,confident,ability,adaptation,respect,care,constrainnt, date_reg,ratedby) VALUES ('$staffid',1,$punctuality,$absent,$attitude,$quality,$record,$competence,$diligence,$loyalty,$promptness,$tmanagement,$willing,$innovate,$courteous,$honesty,$leader,$confident,$ability,$adapt,$respect,$care,$constraint,'$grisland','$sesstaffid')");
             if ( $insert === true) {
                 // Insertion failed
-                echo '<script>alert("record inserted successfully.")
-                 window.location.href="viewrating.php";
-                 </script>';
+                echo '<script>alert("Record inserted successfully.");
+                      window.location.href="viewrating.php?staffid=' . $staffid . '";
+                      </script>';
+                
                  } else {
                     echo '<script type="text/javascript">
                     alert("Incomplete submission ,Please try again");
@@ -838,7 +840,9 @@
 </div>
       
         </form> 
+        <footer class="text-center mt-8 text-xs text-gray-600">&copy; <?php echo date("Y"); ?> CITM. All rights reserved.</footer>
         </div>  
     </div> 
+    
 </body>
 </html>

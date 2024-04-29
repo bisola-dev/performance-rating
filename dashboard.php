@@ -20,7 +20,8 @@ include_once "check.php";
                 <p class="text-sm mt-2">Welcome, <?php echo $sesfulln; ?></p>
           
             <ul class="py-4 px-6 flex flex-col space-y-2">
-                <li><a href="ratestaff.php" class="hover:text-gray-300">Rate Staff</a></li>
+               <li><a href="ratestaff.php" class="hover:text-gray-300">Rate Staff</a></li>
+                <li><a href="createstaff.php" class="hover:text-gray-300">Create Staff</a></li>
                 <li><a href="viewratedstaff.php" class="hover:text-gray-300">View All Rated Staff</a></li>
                 <li><a href="logout.php" class="hover:text-gray-300">Logout</a></li>
             </ul>
@@ -29,8 +30,7 @@ include_once "check.php";
         <!-- Content -->
         <div class="flex-1 p-6">
             <h1 class="text-1xl font-bold mb-6"> <?php echo 'WELCOME'.' '.$sesfulln . ' || ' . $sesstatus . ' || ' . $sesrole.' || '.$sesdept; ?> </h1>
-
-        </div>
-    </div>
+    </div>     
+    </div>   
 </body>
 </html>

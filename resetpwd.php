@@ -143,6 +143,10 @@ if (isset($_POST['reset_password'])) {
             <input type="text" id="staff_id" name="staff_id" required><br>
             <button type="submit" name="search">Search</button>
         </form>
+
+        <div>
+        <footer class="text-center mt-8 text-xs text-gray-600">&copy; <?php echo date("Y"); ?> CITM. All rights reserved.</footer>
+    </div>
         <?php   
          if (isset($_POST['search'])) {
             $staff_id = mysqli_real_escape_string($conn, trim(strip_tags($_POST['staff_id'])));
