@@ -11,7 +11,7 @@
  Target Server Version : 80300 (8.3.0)
  File Encoding         : 65001
 
- Date: 29/04/2024 10:58:06
+ Date: 06/06/2024 14:25:44
 */
 
 SET NAMES utf8mb4;
@@ -1887,7 +1887,7 @@ BEGIN;
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (1, 'AD/R/S.2212', 'HEAD OF DEPARTMENT', 'AGRICULTURAL EXTENSION & MANAGEMENT', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-27 11:03:39', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (2, 'AD/R/S.2192', 'HEAD OF DEPARTMENT', 'AGRICULTURAL TECHNOLOGY', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', NULL, NULL);
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (3, 'AD/R/S.2185', 'HEAD OF DEPARTMENT', 'ANIMAL PRODUCTION TECHNOLOGY', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', NULL, NULL);
-INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (4, 'AD/R/S.4058', 'HEAD OF DEPARTMENT', 'CROP PRODUCTION TECHNOLOGY', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-24 11:09:40', '1');
+INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (4, 'AD/R/S.4058', 'HEAD OF DEPARTMENT', 'CROP PRODUCTION TECHNOLOGY', 'ACTING', 'f08170d671bece467370738e140bcea4', '2024-06-06 13:31:14', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (5, 'AD/R/S.1018', 'HEAD OF DEPARTMENT', 'BOOK PUBLISHING', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', NULL, NULL);
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (6, 'AD/R/S.1491', 'HEAD OF DEPARTMENT', 'FASHION DESIGN & CLOTHING TECHNOLOGY', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', NULL, NULL);
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (7, 'AD/R/S.1581', 'HEAD OF DEPARTMENT', 'FINE ART', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', NULL, NULL);
@@ -1954,18 +1954,18 @@ INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `S
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (68, 'AD/R/S.4093', 'DIRECTORS/HEAD OF UNIT', 'PHYSICAL PLANNING UNIT', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-24 13:08:30', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (69, 'AD/R/S.1225', 'DIRECTORS/HEAD OF UNIT', 'MEDICAL SERVICES', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-24 16:10:40', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (70, 'AD/R/S.1254', 'DIRECTORS/HEAD OF UNIT', 'ACADEMIC PLANNING UNIT', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', NULL, NULL);
-INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (71, 'AD/R/S.1520', 'DIRECTORS/HEAD OF UNIT', 'CENTRE FOR INFORMATION TECHNOLOGY AND MANAGEMENT', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-24 14:54:20', '1');
+INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (71, 'AD/R/S.1520', 'DIRECTORS/HEAD OF UNIT', 'CENTRE FOR INFORMATION TECHNOLOGY AND MANAGEMENT', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-06-06 14:16:22', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (72, 'AD/R/S.053666', 'DIRECTORS/HEAD OF UNIT', 'CONSULT', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-26 17:25:13', '1');
-INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (73, 'AD/R/S.1902', 'DIRECTORS/HEAD OF UNIT', 'EPE CAMPUS', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-26 17:16:05', '1');
+INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (73, 'AD/R/S.1902', 'DIRECTORS/HEAD OF UNIT', 'EPE CAMPUS', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-06-06 14:23:23', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (74, 'AD/R/S.1232', 'DIRECTORS/HEAD OF UNIT', 'TETFUND CENTRE OF EXCELLENCE', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-24 15:44:18', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (75, 'AD/R/S.1986', 'DIRECTORS/HEAD OF UNIT', 'UNEVOC CENTRE FOR RESEARCH AND SUSTAINABLE DEVELOPMENT', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-24 16:40:19', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (76, 'AD/R/S.1950', 'DIRECTORS/HEAD OF UNIT', 'WORKS AND SERVICES', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', NULL, NULL);
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (77, 'AD/R/S.1023', 'PRINCIPAL OFFICER', 'RECTOR', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-26 22:44:25', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (78, 'AD/R/S.1262', 'PRINCIPAL OFFICER', 'DEPUTY RECTOR (ACADEMIC)', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', NULL, NULL);
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (79, 'AD/R/S.0536', 'PRINCIPAL OFFICER', 'DEPUTY RECTOR (ADMINISTRATION)', 'SUBSTANTIVE', '5ea046b6db068f19817ca75550720af5', '2024-04-29 10:15:15', '1');
-INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (80, 'AD/R/S.0705', 'PRINCIPAL OFFICER', 'REGISTRAR', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-26 22:57:58', '1');
+INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (80, 'AD/R/S.0705', 'PRINCIPAL OFFICER', 'REGISTRAR', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-06-06 13:33:01', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (81, 'AD/R/S.2544', 'PRINCIPAL OFFICER', 'BURSAR', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-27 11:08:39', '1');
-INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (82, 'AD/R/S.0984', 'PRINCIPAL OFFICER', 'POLYTECHNIC LIBRARIAN', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-26 23:17:24', '1');
+INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (82, 'AD/R/S.0984', 'PRINCIPAL OFFICER', 'POLYTECHNIC LIBRARIAN', 'SUBSTANTIVE', '12fff09fd307c822cab72f130d13892a', '2024-06-06 14:09:14', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (83, 'AD/R/S.2187', 'DEAN', 'AGRICULTURAL TECHNOLOGY', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', NULL, NULL);
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (84, 'AD/R/S.1412', 'DEAN', 'ART, DESIGN AND PRINTING', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', NULL, NULL);
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (85, 'AD/R/S.2292', 'DEAN', 'ENGINEERING', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-26 14:41:03', '1');
@@ -1980,7 +1980,7 @@ INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `S
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (94, 'AD/R/S.2055', 'HEAD OF DEPARTMENT', 'INTERNAL AUDIT', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-26 23:00:43', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (95, 'AD/R/S.0924', 'HEAD OF DEPARTMENT', 'PRINTING TECHNOLOGY', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', NULL, NULL);
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (96, 'AD/R/S.1140', 'DEPUTY REGISTRAR', 'COUNCIL AFFAIRS', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-26 22:56:28', '1');
-INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (97, 'AD/R/S.2279', 'DEPUTY REGISTRAR\n', 'EPE CAMPUS, OFFICE OF THE DEPUTY REGISTRAR\n', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-27 12:39:32', '1');
+INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (97, 'AD/R/S.2279', 'DEPUTY REGISTRAR\n', 'EPE CAMPUS, OFFICE OF THE DEPUTY REGISTRAR\n', 'SUBSTANTIVE', '12fff09fd307c822cab72f130d13892a', '2024-06-06 14:21:18', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (98, 'AD/R/S.1513', 'DEPUTY REGISTRAR', 'STUDENTS RECORDS', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-24 16:25:50', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (99, 'AD/R/S.2287', 'DEPUTY REGISTRAR', 'ACADEMIC BOARD', 'ACTING', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-26 23:14:52', '1');
 INSERT INTO `managementofficers` (`sn`, `staff_number`, `Role`, `OfficeHeld`, `Status_Capacity`, `Hpazz`, `lastlogin`, `isActive`) VALUES (101, 'AD/R/S.2039', 'DEPUTY REGISTRAR', 'EXAMINATION MATTERS', 'SUBSTANTIVE', 'bd79d6c3f111f136c10874237a8c7533', '2024-04-26 13:15:16', '1');
@@ -2022,7 +2022,7 @@ CREATE TABLE `performance` (
   `ratedby` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `update_reg` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- ----------------------------
 -- Records of performance
@@ -2035,6 +2035,8 @@ INSERT INTO `performance` (`id`, `staff_id`, `dele`, `punctuality`, `absenteeism
 INSERT INTO `performance` (`id`, `staff_id`, `dele`, `punctuality`, `absenteeism`, `attitude`, `quality`, `record`, `competence`, `diligence`, `loyalty`, `promptness`, `tmanagement`, `willingness`, `innovative`, `courteous`, `honesty`, `leadership`, `confident`, `ability`, `adaptation`, `respect`, `care`, `constrainnt`, `date_reg`, `ratedby`, `update_reg`) VALUES (35, 'Ad/R/S.2215', 1, 10, 8, 6, 8, 8, 8, 6, 10, 2, 8, 8, 10, 8, 8, 10, 6, 8, 8, 10, 10, 8, '2024-03-31 05:34:09', 'AD/R/S.2275', '2024-03-31 06:12:49');
 INSERT INTO `performance` (`id`, `staff_id`, `dele`, `punctuality`, `absenteeism`, `attitude`, `quality`, `record`, `competence`, `diligence`, `loyalty`, `promptness`, `tmanagement`, `willingness`, `innovative`, `courteous`, `honesty`, `leadership`, `confident`, `ability`, `adaptation`, `respect`, `care`, `constrainnt`, `date_reg`, `ratedby`, `update_reg`) VALUES (36, 'Ad/R/S.2107', 1, 4, 4, 4, 6, 8, 6, 6, 6, 8, 6, 6, 6, 8, 8, 6, 8, 6, 6, 6, 10, 10, '2024-04-02 03:16:28', 'AD/R/S.1422', '2024-04-27 12:43:28');
 INSERT INTO `performance` (`id`, `staff_id`, `dele`, `punctuality`, `absenteeism`, `attitude`, `quality`, `record`, `competence`, `diligence`, `loyalty`, `promptness`, `tmanagement`, `willingness`, `innovative`, `courteous`, `honesty`, `leadership`, `confident`, `ability`, `adaptation`, `respect`, `care`, `constrainnt`, `date_reg`, `ratedby`, `update_reg`) VALUES (37, 'AD/R/S.2187', 1, 8, 8, 8, 8, 8, 10, 10, 10, 8, 10, 10, 10, 10, 10, 8, 10, 10, 10, 10, 10, 10, '2024-04-19 04:17:46', 'AD/R/S.4058', NULL);
+INSERT INTO `performance` (`id`, `staff_id`, `dele`, `punctuality`, `absenteeism`, `attitude`, `quality`, `record`, `competence`, `diligence`, `loyalty`, `promptness`, `tmanagement`, `willingness`, `innovative`, `courteous`, `honesty`, `leadership`, `confident`, `ability`, `adaptation`, `respect`, `care`, `constrainnt`, `date_reg`, `ratedby`, `update_reg`) VALUES (44, 'AD/R/S.2385', 1, 8, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, '2024-06-06 02:01:10', 'AD/R/S.0984', NULL);
+INSERT INTO `performance` (`id`, `staff_id`, `dele`, `punctuality`, `absenteeism`, `attitude`, `quality`, `record`, `competence`, `diligence`, `loyalty`, `promptness`, `tmanagement`, `willingness`, `innovative`, `courteous`, `honesty`, `leadership`, `confident`, `ability`, `adaptation`, `respect`, `care`, `constrainnt`, `date_reg`, `ratedby`, `update_reg`) VALUES (45, 'AD/R/S.3080', 1, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, '2024-06-06 02:13:56', 'AD/R/S.0984', NULL);
 COMMIT;
 
 -- ----------------------------
@@ -2082,7 +2084,7 @@ CREATE TABLE `usercontroller` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `usercontroller` (`recID`, `passWord`, `userName`, `isActive`, `lastLogin`, `userRole`) VALUES (1, 'a9795704129728b85e4b4585cccf9777', 'Mr Yaks', NULL, NULL, 1);
-INSERT INTO `usercontroller` (`recID`, `passWord`, `userName`, `isActive`, `lastLogin`, `userRole`) VALUES (2, '32bc73932f28d04893b723b0d8866e48', 'bisola.oke@yabatech.edu.ng', 1, '2024-04-27 12:45:08', 1);
+INSERT INTO `usercontroller` (`recID`, `passWord`, `userName`, `isActive`, `lastLogin`, `userRole`) VALUES (2, 'e074309e351c88e53c7fc33d8cb63ac3', 'bisola.oke@yabatech.edu.ng', 1, '2024-06-06 02:24:17', 1);
 COMMIT;
 
 -- ----------------------------

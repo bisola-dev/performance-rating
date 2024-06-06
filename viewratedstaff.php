@@ -697,7 +697,7 @@ if (!$queryDb) {
                         </td>
      
                         <td class="px-6 py-4 whitespace-nowrap">
-                        <a href="editrate2.php?staffid=<?php echo $staffid; ?>" class="px-4 py-2 bg-green-400 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400">EDIT</a>
+                        <a href="editrate.php?staffid=<?php echo $staffid; ?>" class="px-4 py-2 bg-green-400 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400">EDIT</a>
                     </td>
       </td>
 

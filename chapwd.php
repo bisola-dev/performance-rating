@@ -22,45 +22,44 @@ if ($checkxx != 'bd79d6c3f111f136c10874237a8c7533') {
 }
 
 
+
 if (isset($_POST['login'])) {
     // Sanitize input
-    $olpazz= mysqli_real_escape_string($conn, trim($_POST['olpazz']));
+    $olpazz = mysqli_real_escape_string($conn, trim($_POST['olpazz']));
     $npwd = mysqli_real_escape_string($conn, trim($_POST['npwd']));
-    $cpwd= mysqli_real_escape_string($conn, trim($_POST['cpwd']));
+    $cpwd = mysqli_real_escape_string($conn, trim($_POST['cpwd']));
 
-    $hashedolpazz= md5('ririra' . $olpazz); 
+    $hashedolpazz = md5('ririra' . $olpazz);
 
     // Query to get the current password of the user
     $query = "SELECT Hpazz FROM managementofficers WHERE staff_number = '$sesstaffid'";
     $result = mysqli_query($conn, $query);
- 
 
     if ($result && mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
         $current_password = $row['Hpazz'];
-     
-    
+
         // Verify if the old password matches the current password
-        if ($hashedolpazz === $current_password) {          
+        if ($hashedolpazz === $current_password) {
             // Check if new password and confirm password match
             if ($npwd === $cpwd) {
-                // Hash the new password
-           
-                $hashed_password = md5('ririra' . $npwd); 
-                //echo  $hashed_password ;
-             
-             
-                // Update the password in the database
-                $update_query = "UPDATE managementofficers SET Hpazz = '$hashed_password' WHERE staff_number = '$sesstaffid'";
-                $update_result = mysqli_query($conn, $update_query);
+                // Check if new password is different from old password
+                $hashed_password = md5('ririra' . $npwd);
+                if ($hashed_password !== $hashedolpazz) {
+                    // Update the password in the database
+                    $update_query = "UPDATE managementofficers SET Hpazz = '$hashed_password' WHERE staff_number = '$sesstaffid'";
+                    $update_result = mysqli_query($conn, $update_query);
 
-                if ($update_result) {
-                    echo '<script type="text/javascript">
+                    if ($update_result) {
+                        echo '<script type="text/javascript">
                             alert("Password updated successfully");
                             window.location.href = "dashboard.php"; 
                           </script>';
+                    } else {
+                        echo "<script type='text/javascript'>alert('Failed to update password');</script>";
+                    }
                 } else {
-                    echo "<script type='text/javascript'>alert('Failed to update password');</script>";
+                    echo "<script type='text/javascript'>alert('New password cannot be the same as old password');</script>";
                 }
             } else {
                 echo "<script type='text/javascript'>alert('New password and confirm password do not match');</script>";
@@ -73,7 +72,6 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
-
 
 
 
@@ -104,12 +102,12 @@ if (isset($_POST['login'])) {
             </div>  
             <div class="mb-4">
            <label for="new_password" class="block text-sm font-medium text-gray-700">New Password:</label>
-          <input type="password" id="new_password" name="npwd" placeholder="New Password" maxlength="7" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+          <input type="password" id="new_password" name="npwd" placeholder="New Password" minlength="8" maxlength="16" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
          </div>
 
       <div class="mb-6">
     <label for="confirm_password" class="block text-sm font-medium text-gray-700">Confirm New Password:</label>
-    <input type="password" id="confirm_password" name="cpwd" placeholder="Confirm New Password" maxlength="7" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+    <input type="password" id="confirm_password" name="cpwd" placeholder="Confirm New Password" minlength="8" maxlength="16" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
      </div>
 
             <div class="text-center">

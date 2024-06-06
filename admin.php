@@ -10,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
     } else {
         $hashedPassword = md5('uzrat' . $uzratpwd);
-
         $db = mysqli_select_db($conn, $dbname);
         $query = mysqli_query($conn, "SELECT * FROM usercontroller WHERE userName='$uzrat' AND PassWord = '$hashedPassword' LIMIT 1");
         $rows = mysqli_num_rows($query);

@@ -17,7 +17,7 @@ if ($sesrole === "DEAN") {
 }
 elseif ($sesdept === "CENTRE FOR INFORMATION TECHNOLOGY AND MANAGEMENT") {
     // If $sesdept is "CENTRE FOR INFORMATION TECHNOLOGY AND MANAGEMENT", use LIKE operator for wildcard search
-    $sesdept2 = "%" . $sesdept . "%";
+    $sesdept2 =  $sesdept;
     
 } elseif ($sesdept === "EPE CAMPUS") {
     // List of additional departments to fetch
