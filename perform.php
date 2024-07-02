@@ -125,8 +125,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Performance Rating Indicators</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="images/logoyct.png" type="image/x-icon">
+    
 </head>
 <body class="bg-gradient-to-b from-green-100 to-green-300 min-h-screen flex justify-center items-center p-4">
 <div class="container mx-auto">

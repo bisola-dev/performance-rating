@@ -9,7 +9,7 @@ include_once "check.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
 </head>
 <body class="bg-gray-100">
     <div class="flex h-screen">
@@ -21,7 +21,7 @@ include_once "check.php";
           
             <ul class="py-4 px-6 flex flex-col space-y-2">
                <li><a href="ratestaff.php" class="hover:text-gray-300">Rate Staff</a></li>
-                <li><a href="createstaff.php" class="hover:text-gray-300">Create Staff</a></li>
+                <!---<li><a href="createstaff.php" class="hover:text-gray-300">Create Staff</a></li>--->
                 <li><a href="viewratedstaff.php" class="hover:text-gray-300">View All Rated Staff</a></li>
                 <li><a href="logout.php" class="hover:text-gray-300">Logout</a></li>
             </ul>

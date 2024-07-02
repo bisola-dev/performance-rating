@@ -68,7 +68,7 @@ if (isset($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/logoyct.png" type="image/x-icon">
     <title>Performance Rating Indicators</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   
 </head>
 <body class="bg-gradient-to-b from-green-100 to-green-300 min-h-screen flex justify-center items-center bg-gray-100 p-4">
     <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">

@@ -58,45 +58,7 @@ if (is_array($sesdept2)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/logoyct.png" type="image/x-icon">
     <title>Performance Rating Indicators</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .dashboard-link {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            text-decoration: none;
-            color: #2d3748;
-            font-weight: bold;
-            padding: 0.5rem 1rem;
-            background-color: #cbd5e0;
-            border-radius: 0.25rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .dashboard-link:hover {
-            background-color: #a0aec0;
-        }
-
-        /* Additional styles */
-        .container {
-            max-width: 800px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    
 </head>
 <body class="bg-gradient-to-b from-green-100 to-green-300 min-h-screen flex justify-center items-center bg-gray-100 p-4">
 

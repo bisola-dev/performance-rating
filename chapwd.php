@@ -81,14 +81,7 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Password</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .back-to-login {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-    </style>
+   
 </head>
 <a href="index.php" class="back-to-login inline-block px-2 py-1 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Back to login page</a>
 <div class="max-w-md w-full bg-white p-8 rounded-md shadow-md">

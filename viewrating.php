@@ -11,7 +11,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Performance Rating Indicators</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/logoyct.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 </head>
@@ -71,19 +70,19 @@
                             <?php  if (!empty($punctuality1)) {
             switch ($punctuality1) {
                 case 10:
-                    echo '<option value="10" selected>Timely</option>';
+                    echo '<option value="5" selected>Timely</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Regularly</option>';
+                    echo '<option value="4" selected>Regularly</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Usually</option>';
+                    echo '<option value="3" selected>Usually</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Needs improvement</option>';
+                    echo '<option value="2" selected>Needs improvement</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Poor</option>';
+                    echo '<option value="1" selected>Poor</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -96,19 +95,19 @@
         if (!empty($absenteeism1)) {
             switch ($absenteeism1) {
                 case 10:
-                    echo '<option value="10" selected>rarely never missing work</option>';
+                    echo '<option value="5" selected>rarely never missing work</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Infrequent and typically occur for legitimate reasons</option>';
+                    echo '<option value="4" selected>Infrequent and typically occur for legitimate reasons</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Sometimes but within reasonable limits</option>';
+                    echo '<option value="3" selected>Sometimes but within reasonable limits</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Often without valid reasons</option>';
+                    echo '<option value="2" selected>Often without valid reasons</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Misses work daily</option>';
+                    echo '<option value="1" selected>Misses work daily</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -121,19 +120,19 @@
         if (!empty($attitude1)) {
             switch ($attitude1) {
                 case 10:
-                    echo '<option value="10" selected>Committed</option>';
+                    echo '<option value="5" selected>Committed</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>dutiful</option>';
+                    echo '<option value="4" selected>dutiful</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>fairly committed</option>';
+                    echo '<option value="3" selected>fairly committed</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Lazy</option>';
+                    echo '<option value="2" selected>Lazy</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>unscrupulous</option>';
+                    echo '<option value="1" selected>unscrupulous</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -146,19 +145,19 @@
         if (!empty($quality1)) {
             switch ($quality1) {
                 case 10:
-                    echo '<option value="10" selected>Accuracy</option>';
+                    echo '<option value="5" selected>Accuracy</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Completeness</option>';
+                    echo '<option value="4" selected>Completeness</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Relevance</option>';
+                    echo '<option value="3" selected>Relevance</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Timeliness</option>';
+                    echo '<option value="2" selected>Timeliness</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>lack of precision</option>';
+                    echo '<option value="1" selected>lack of precision</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -171,19 +170,19 @@
         if (!empty($record1)) {
             switch ($record1) {
                 case 10:
-                    echo '<option value="10" selected>Records Inventory and Classification</option>';
+                    echo '<option value="5" selected>Records Inventory and Classification</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Records Retention and Scheduling</option>';
+                    echo '<option value="4" selected>Records Retention and Scheduling</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Disaster Prevention Programme</option>';
+                    echo '<option value="3" selected>Disaster Prevention Programme</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Disposition</option>';
+                    echo '<option value="2" selected>Disposition</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Archive</option>';
+                    echo '<option value="1" selected>Archive</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -196,19 +195,19 @@
         if (!empty($competence1)) {
             switch ($competence1) {
                 case 10:
-                    echo '<option value="10" selected>Knowledge - experience</option>';
+                    echo '<option value="5" selected>Knowledge - experience</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Communication skills</option>';
+                    echo '<option value="4" selected>Communication skills</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>problem solving /technical skills</option>';
+                    echo '<option value="3" selected>problem solving /technical skills</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Adaptability -efficient</option>';
+                    echo '<option value="2" selected>Adaptability -efficient</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Inept</option>';
+                    echo '<option value="1" selected>Inept</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -221,19 +220,19 @@
         if (!empty($diligence1)) {
             switch ($diligence1) {
                 case 10:
-                    echo '<option value="10" selected>Dutiful</option>';
+                    echo '<option value="5" selected>Dutiful</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Tenacious</option>';
+                    echo '<option value="4" selected>Tenacious</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Painstaking</option>';
+                    echo '<option value="3" selected>Painstaking</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Sloppy</option>';
+                    echo '<option value="2" selected>Sloppy</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Indifference</option>';
+                    echo '<option value="1" selected>Indifference</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -246,19 +245,19 @@
         if (!empty($loyalty1)) {
             switch ($loyalty1) {
                 case 10:
-                    echo '<option value="10" selected>Ability to Portray the College in good Light --representativeness</option>';
+                    echo '<option value="5" selected>Ability to Portray the College in good Light --representativeness</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Integrity</option>';
+                    echo '<option value="4" selected>Integrity</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Satisfactory</option>';
+                    echo '<option value="3" selected>Satisfactory</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Fickle</option>';
+                    echo '<option value="2" selected>Fickle</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Disloyal</option>';
+                    echo '<option value="1" selected>Disloyal</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -271,19 +270,19 @@
         if (!empty($promptness1)) {
             switch ($promptness1) {
                 case 10:
-                    echo '<option value="10" selected>Adequately timely</option>';
+                    echo '<option value="5" selected>Adequately timely</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Prioritization</option>';
+                    echo '<option value="4" selected>Prioritization</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Fairly timely</option>';
+                    echo '<option value="3" selected>Fairly timely</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Sluggish</option>';
+                    echo '<option value="2" selected>Sluggish</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Lax</option>';
+                    echo '<option value="1" selected>Lax</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -295,19 +294,19 @@
         if (!empty($tmanagement1)) {
             switch ($tmanagement1) {
                 case 10:
-                    echo '<option value="10" selected>Organised</option>';
+                    echo '<option value="5" selected>Organised</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Delegate work with authority</option>';
+                    echo '<option value="4" selected>Delegate work with authority</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Update superior about happenings</option>';
+                    echo '<option value="3" selected>Update superior about happenings</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Time negligent</option>';
+                    echo '<option value="2" selected>Time negligent</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Time chaos</option>';
+                    echo '<option value="1" selected>Time chaos</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -320,19 +319,19 @@
         if (!empty($willingness1)) {
             switch ($willingness1) {
                 case 10:
-                    echo '<option value="10" selected>Eagerness for tasks beyond their regular duties</option>';
+                    echo '<option value="5" selected>Eagerness for tasks beyond their regular duties</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Enthusiastic</option>';
+                    echo '<option value="4" selected>Enthusiastic</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Interested</option>';
+                    echo '<option value="3" selected>Interested</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Sometimes enthusiastic</option>';
+                    echo '<option value="2" selected>Sometimes enthusiastic</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Not enthusiastic</option>';
+                    echo '<option value="1" selected>Not enthusiastic</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -346,19 +345,19 @@
         if (!empty($innovative1)) {
             switch ($innovative1) {
                 case 10:
-                    echo '<option value="10" selected>Proactive Novelty - Originality</option>';
+                    echo '<option value="5" selected>Proactive Novelty - Originality</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Willingness to take calculated risks</option>';
+                    echo '<option value="4" selected>Willingness to take calculated risks</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Creativity</option>';
+                    echo '<option value="3" selected>Creativity</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Improvise - Proactivity</option>';
+                    echo '<option value="2" selected>Improvise - Proactivity</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Adaptability</option>';
+                    echo '<option value="1" selected>Adaptability</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -371,19 +370,19 @@
         if (!empty($courteous1)) {
             switch ($courteous1) {
                 case 10:
-                    echo '<option value="10" selected>Politeness</option>';
+                    echo '<option value="5" selected>Politeness</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Pleasant</option>';
+                    echo '<option value="4" selected>Pleasant</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Active listening</option>';
+                    echo '<option value="3" selected>Active listening</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Empathy</option>';
+                    echo '<option value="2" selected>Empathy</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Impolite</option>';
+                    echo '<option value="1" selected>Impolite</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -396,19 +395,19 @@
         if (!empty($honesty1)) {
             switch ($honesty1) {
                 case 10:
-                    echo '<option value="10" selected>Genuine - truthfulness</option>';
+                    echo '<option value="5" selected>Genuine - truthfulness</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Reliable</option>';
+                    echo '<option value="4" selected>Reliable</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Transparent</option>';
+                    echo '<option value="3" selected>Transparent</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Fairly transparent</option>';
+                    echo '<option value="2" selected>Fairly transparent</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Dishonest</option>';
+                    echo '<option value="1" selected>Dishonest</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -421,19 +420,19 @@
         if (!empty($leadership1)) {
             switch ($leadership1) {
                 case 10:
-                    echo '<option value="10" selected>Good listener - communication</option>';
+                    echo '<option value="5" selected>Good listener - communication</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Knowledgeable - strategic thinking</option>';
+                    echo '<option value="4" selected>Knowledgeable - strategic thinking</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Empathy - ability to inspire and motivate others.</option>';
+                    echo '<option value="3" selected>Empathy - ability to inspire and motivate others.</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Fairly suitable</option>';
+                    echo '<option value="2" selected>Fairly suitable</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Unsuitable</option>';
+                    echo '<option value="1" selected>Unsuitable</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -446,19 +445,19 @@
         if (!empty($constraint1)) {
             switch ($constraint1) {
                 case 10:
-                    echo '<option value="10" selected>Epileptic Power Supply</option>';
+                    echo '<option value="5" selected>Epileptic Power Supply</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Work Environment not Conducive</option>';
+                    echo '<option value="4" selected>Work Environment not Conducive</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Inadequate Working Tools</option>';
+                    echo '<option value="3" selected>Inadequate Working Tools</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Inadequate Staff Welfare</option>';
+                    echo '<option value="2" selected>Inadequate Staff Welfare</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Unfriendly Team</option>';
+                    echo '<option value="1" selected>Unfriendly Team</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -471,19 +470,19 @@
         if (!empty($confident1)) {
             switch ($confident1) {
                 case 10:
-                    echo '<option value="10" selected>Awareness and firm adherence of confidentiality policies and procedures</option>';
+                    echo '<option value="5" selected>Awareness and firm adherence of confidentiality policies and procedures</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Adherence to confidentiality protocols</option>';
+                    echo '<option value="4" selected>Adherence to confidentiality protocols</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Handling of sensitive information</option>';
+                    echo '<option value="3" selected>Handling of sensitive information</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Awareness of the consequences of breaches in confidentiality</option>';
+                    echo '<option value="2" selected>Awareness of the consequences of breaches in confidentiality</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Poor confidentiality practices</option>';
+                    echo '<option value="1" selected>Poor confidentiality practices</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -497,19 +496,19 @@
         if (!empty($ability1)) {
             switch ($ability1) {
                 case 10:
-                    echo '<option value="10" selected>Capacity to remain calm</option>';
+                    echo '<option value="5" selected>Capacity to remain calm</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Staying focused</option>';
+                    echo '<option value="4" selected>Staying focused</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Making informed decision</option>';
+                    echo '<option value="3" selected>Making informed decision</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Reduced creativity</option>';
+                    echo '<option value="2" selected>Reduced creativity</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Poor performance</option>';
+                    echo '<option value="1" selected>Poor performance</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -522,19 +521,19 @@
         if (!empty($adaptation1 )) {
             switch ($adaptation1 ) {
                 case 10:
-                    echo '<option value="10" selected>Commitment to the College’s Mission and Vision</option>';
+                    echo '<option value="5" selected>Commitment to the College’s Mission and Vision</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Understanding the College’s Mission  and Vision</option>';
+                    echo '<option value="4" selected>Understanding the College’s Mission  and Vision</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Willingness to adjust to new policies and procedures of the College</option>';
+                    echo '<option value="3" selected>Willingness to adjust to new policies and procedures of the College</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Aware but inconsistent with college\'s Mission</option>';
+                    echo '<option value="2" selected>Aware but inconsistent with college\'s Mission</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Nonchalant about the college\'s vision and Mission</option>';
+                    echo '<option value="1" selected>Nonchalant about the college\'s vision and Mission</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -547,19 +546,19 @@
         if (!empty($respect1)) {
             switch ($respect1) {
                 case 10:
-                    echo '<option value="10" selected>Compliance with policies and Regulations</option>';
+                    echo '<option value="5" selected>Compliance with policies and Regulations</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Adherence to directives</option>';
+                    echo '<option value="4" selected>Adherence to directives</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Fairly compliant with policies</option>';
+                    echo '<option value="3" selected>Fairly compliant with policies</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Disregard towards constituted authority</option>';
+                    echo '<option value="2" selected>Disregard towards constituted authority</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Bad attitude towards authority figures</option>';
+                    echo '<option value="1" selected>Bad attitude towards authority figures</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';
@@ -573,19 +572,19 @@
         if (!empty($care1)) {
             switch ($care1) {
                 case 10:
-                    echo '<option value="10" selected>Responsible use of resources</option>';
+                    echo '<option value="5" selected>Responsible use of resources</option>';
                     break;
                 case 8:
-                    echo '<option value="8" selected>Adherence to maintenance protocols</option>';
+                    echo '<option value="4" selected>Adherence to maintenance protocols</option>';
                     break;
                 case 6:
-                    echo '<option value="6" selected>Prevention of damage or loss</option>';
+                    echo '<option value="3" selected>Prevention of damage or loss</option>';
                     break;
                 case 4:
-                    echo '<option value="4" selected>Misuse of facilities, equipment, or resources</option>';
+                    echo '<option value="2" selected>Misuse of facilities, equipment, or resources</option>';
                     break;
                 case 2:
-                    echo '<option value="2" selected>Complete negligence</option>';
+                    echo '<option value="1" selected>Complete negligence</option>';
                     break;
                 default:
                     echo '<option value="" selected>Select</option>';

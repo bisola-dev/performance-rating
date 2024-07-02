@@ -51,6 +51,7 @@ if (isset($_POST['reset_password'])) {
     <a href="admindash.php" class="inline-block px-2 py-1 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 focus:outline-none focus:bg-gray-400">Back to Dashboard</a>
 </div>
     <title>Reset Password</title>
+          <!--
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -134,6 +135,8 @@ if (isset($_POST['reset_password'])) {
             background-color: #c82333;
         }
     </style>
+           -->
+
 </head>
 <body>
     <div class="container">
